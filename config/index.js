@@ -4,7 +4,7 @@ const config = {
     password: process.env.DATABASE_PASSWORD,
     database: "gb_project",
     host: "127.0.0.1",
-    username: "root",
+    username: "admin",
     dialect: "mysql",
     logging: false,
     //
