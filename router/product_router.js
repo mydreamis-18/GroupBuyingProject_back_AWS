@@ -24,6 +24,7 @@ const storage = multer.diskStorage({
 ///////////////////////////////////////////////
 router.post("/getAllProducts", (req, res) => {
   //
+  res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
   Product.findAll().then((obj) => res.send(obj));
 });
 //
