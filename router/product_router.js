@@ -27,7 +27,6 @@ router.post("/getAllProducts", (req, res) => {
   Product.findAll().then((obj) => {
     //
     res.send(obj);
-    console.log(obj);
   });
 });
 //
