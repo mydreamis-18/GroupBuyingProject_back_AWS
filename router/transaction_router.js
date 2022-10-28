@@ -58,10 +58,10 @@ router.post("/refund", verifyTokensMiddleware, async (req, res) => {
   //
   await changeToRefundFn(model, userNum, productNum, created_at);
   //
-  let updated_at = await model.findAll();
+  let updated_at = await model.findOne({ where: { user_id_fk: userNum, product_id_fk: productNum, created_at }, attributes: ["updated_at"] });
   console.log(model);
-  console.log(updated_at[0].dataValues);
-  updated_at = updated_at.dataValues.updated_at;
+  console.log(updated_at);
+  updated_at = updated_at.dataValues.updatedAt;
   //
   res.send({ isSuccess: true, alertMsg: "환불이 완료되었습니다.", newAccessToken, updated_at, newNotification });
 });
