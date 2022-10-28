@@ -58,10 +58,9 @@ router.post("/refund", verifyTokensMiddleware, async (req, res) => {
   //
   await changeToRefundFn(model, userNum, productNum, created_at);
   //
-  let time = new Date(created_at);
-  console.log(time);
-  console.log(typeof time);
-  let updated_at = await model.findOne({ where: { user_id_fk: userNum, product_id_fk: productNum, created_at: time } });
+  let date = Date("2022/10/28/11/26/08");
+  console.log(date);
+  let updated_at = await model.findOne({ where: { user_id_fk: userNum, product_id_fk: productNum, created_at: date } });
   console.log(updated_at);
   updated_at = updated_at.dataValues.updatedAt;
   //
