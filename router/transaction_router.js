@@ -60,7 +60,7 @@ router.post("/refund", verifyTokensMiddleware, async (req, res) => {
   //
   let updated_at = await model.findAll();
   console.log(model);
-  console.log(updated_at);
+  console.log(updated_at[0].dataValues);
   updated_at = updated_at.dataValues.updated_at;
   //
   res.send({ isSuccess: true, alertMsg: "환불이 완료되었습니다.", newAccessToken, updated_at, newNotification });
