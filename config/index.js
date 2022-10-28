@@ -13,6 +13,7 @@ const config = {
     dialectOptions: {
       typeCast: true,
       dateStrings: true,
+      timezone: "+09:00", // DB에서 가져올 때 시간 설정
     },
   },
 };
