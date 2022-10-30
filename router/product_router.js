@@ -26,7 +26,8 @@ router.post("/getAllProducts", (req, res) => {
   //
   Product.findAll().then((obj) => {
     //
-    res.send(obj);
+    obj.dataValues.img_path = encodeURIComponent(obj.dataValues.img_path);
+    res.send(obj)
   });
 });
 //
